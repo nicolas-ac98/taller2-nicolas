@@ -13,3 +13,6 @@ print('Number of Features: %d'%(df.shape[1]))
 print('Number of Customers: %d'%(df.shape[0]))
 print('Data Types and Frequency in Dataset:')
 print(types)
+
+# Transformar la clase "Owner" a una variable binaria
+df['classified_status'] = np.where(df['Owner'] == '1st owner', '1st owner', 'No 1st owner')
