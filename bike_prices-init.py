@@ -2,6 +2,7 @@
 # Importancion de librerias
 import numpy as np
 import pandas as pd
+import matplotlib.pyplot as plt
 
 # lectura de datos
 df = pd.read_csv('.\\BikePrices.csv')
@@ -16,3 +17,14 @@ print(types)
 
 # Transformar la clase "Owner" a una variable binaria
 df['classified_status'] = np.where(df['Owner'] == '1st owner', '1st owner', 'No 1st owner')
+
+df.boxplot(column='Selling_Price', by='classified_status')
+
+# Set a logarithmic scale on the y-axis
+plt.yscale('log')
+
+plt.title('Boxplot of Selling price by owner status')
+plt.suptitle('')  # Remove default subplot title
+plt.xlabel('Owner Status')
+plt.ylabel('Selling Price')
+plt.show()
