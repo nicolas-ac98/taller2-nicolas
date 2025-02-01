@@ -31,3 +31,8 @@ plt.suptitle('')  # Remove default subplot title
 plt.xlabel('Owner Status')
 plt.ylabel('Selling Price')
 plt.show()
+
+# Observar la estadistica descriptiva de los datos observados
+df.describe()
+# Observar los diferentes tipos de marcas en la base de datos
+df['Brand'].unique()
