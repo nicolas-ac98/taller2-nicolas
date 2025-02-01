@@ -20,6 +20,9 @@ df['classified_status'] = np.where(df['Owner'] == '1st owner', '1st owner', 'No 
 
 df.boxplot(column='Selling_Price', by='classified_status')
 
+# Adjust the size of the image
+plt.figure(figsize=(8, 6))
+
 # Set a logarithmic scale on the y-axis
 plt.yscale('log')
 
